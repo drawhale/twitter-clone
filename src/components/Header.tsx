@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { flexColumnBox } from "styles";
-import IconLinkButton from "components/common/IconLinkButton";
 import LogoLinkButton from "components/common/LogoLinkButton";
+import IconLinkButton from "components/common/IconLinkButton";
+import LinkButton from "components/common/LinkButton";
 
 import HomeIcon from "components/common/icons/HomeIcon";
 import SearchIcon from "components/common/icons/SearchIcon";
@@ -37,6 +38,9 @@ const Header: FC = () => {
               <IconLinkButton href="#" icon={<ProfileIcon />} text="프로필" />
               <IconLinkButton href="#" icon={<MoreIcon />} text="더 보기" />
             </StyledNav>
+            <ButtonWrapper>
+              <LinkButton href="#">트윗하기</LinkButton>
+            </ButtonWrapper>
           </NavWrapper>
           <AccountWrapper>
             <div>Name</div>
@@ -53,7 +57,6 @@ const Wrapper = styled.div`
   ${flexColumnBox};
   width: 275px;
   height: 100%;
-  padding: 0 12px;
 `;
 
 const FixedWrapper = styled.div`
@@ -67,6 +70,7 @@ const ColumnWrapper = styled.div`
   justify-content: space-between;
   width: 275px;
   height: 100%;
+  padding: 0 12px;
   overflow-y: auto;
 `;
 
@@ -90,4 +94,11 @@ const StyledNav = styled.nav`
   ${flexColumnBox};
   align-items: flex-start;
   width: 100%;
+  margin: 2px 0 4px;
+`;
+
+const ButtonWrapper = styled.div`
+  ${flexColumnBox};
+  width: 90%;
+  margin: 16px 0;
 `;
