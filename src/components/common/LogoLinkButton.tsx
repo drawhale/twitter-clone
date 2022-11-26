@@ -4,9 +4,13 @@ import TwitterIcon from "components/common/icons/TwitterIcon";
 
 import type { FC } from "react";
 
-const LogoLinkButton: FC = () => {
+type Props = {
+  href: string;
+};
+
+const LogoLinkButton: FC<Props> = ({ href }) => {
   return (
-    <StyledA>
+    <StyledA href={href}>
       <Wrapper>
         <TwitterIcon />
       </Wrapper>
@@ -25,17 +29,22 @@ const StyledA = styled.a`
   transition-duration: 0.2s;
   user-select: none;
   cursor: pointer;
+  border-radius: 9999px;
+
+  &:hover {
+    background-color: ${(props) => props.theme.logoHoverColor};
+  }
 `;
 
 const Wrapper = styled.div`
   ${flexRowBox};
   flex-grow: 1;
   align-items: center;
-  border-radius: 9999px;
 
   svg {
     width: 50px;
     height: 2rem;
-    fill: black;
+    color: ${(props) => props.theme.iconColor};
+    fill: currentColor;
   }
 `;

@@ -23,6 +23,11 @@ const Wrapper = styled.div`
   flex: 1;
   display: flex;
   align-items: stretch;
+
+  ${(props) => `
+    color: ${props.theme.textColor};
+    background-color: ${props.theme.backgroundColor}
+  `}
 `;
 
 const StyledHeader = styled.header`

@@ -1,8 +1,16 @@
 import styled from "styled-components";
 import { flexColumnBox } from "styles";
-import IconLinkButton from "./common/IconLinkButton";
-import LogoLinkButton from "./common/LogoLinkButton";
-import TwitterIcon from "components/common/icons/TwitterIcon";
+import IconLinkButton from "components/common/IconLinkButton";
+import LogoLinkButton from "components/common/LogoLinkButton";
+
+import HomeIcon from "components/common/icons/HomeIcon";
+import SearchIcon from "components/common/icons/SearchIcon";
+import NotificationIcon from "components/common/icons/NotificationIcon";
+import MessageIcon from "components/common/icons/MessageIcon";
+import BookmarkIcon from "components/common/icons/BookmarkIcon";
+import ListIcon from "components/common/icons/ListIcon";
+import ProfileIcon from "components/common/icons/ProfileIcon";
+import MoreIcon from "components/common/icons/MoreIcon";
 
 import type { FC } from "react";
 
@@ -13,10 +21,21 @@ const Header: FC = () => {
         <ColumnWrapper>
           <NavWrapper>
             <StyledH1>
-              <LogoLinkButton />
+              <LogoLinkButton href="#" />
             </StyledH1>
             <StyledNav>
-              <IconLinkButton icon={<TwitterIcon />} text="홈" />
+              <IconLinkButton href="#" icon={<HomeIcon />} text="홈" />
+              <IconLinkButton href="#" icon={<SearchIcon />} text="탐색하기" />
+              <IconLinkButton
+                href="#"
+                icon={<NotificationIcon />}
+                text="일림"
+              />
+              <IconLinkButton href="#" icon={<MessageIcon />} text="쪽지" />
+              <IconLinkButton href="#" icon={<BookmarkIcon />} text="북마크" />
+              <IconLinkButton href="#" icon={<ListIcon />} text="리스트" />
+              <IconLinkButton href="#" icon={<ProfileIcon />} text="프로필" />
+              <IconLinkButton href="#" icon={<MoreIcon />} text="더 보기" />
             </StyledNav>
           </NavWrapper>
           <AccountWrapper>
@@ -46,6 +65,7 @@ const FixedWrapper = styled.div`
 const ColumnWrapper = styled.div`
   ${flexColumnBox};
   justify-content: space-between;
+  width: 275px;
   height: 100%;
   overflow-y: auto;
 `;
@@ -66,4 +86,8 @@ const StyledH1 = styled.h1`
   padding-bottom: 2px;
 `;
 
-const StyledNav = styled.nav``;
+const StyledNav = styled.nav`
+  ${flexColumnBox};
+  align-items: flex-start;
+  width: 100%;
+`;

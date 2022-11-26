@@ -1,5 +1,3 @@
-import styled from "styled-components";
-
 import type { FC, SVGProps } from "react";
 
 const TwitterIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
