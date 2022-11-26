@@ -26,16 +26,14 @@ const Wrapper = styled.div`
 `;
 
 const StyledHeader = styled.header`
-  flex-grow: 1;
-
   ${flexColumnBox};
+  flex-grow: 1;
   align-items: flex-end;
 `;
 
 const StyledMain = styled.main`
+  ${flexColumnBox};
   flex-grow: 1;
   flex-shrink: 1;
-
-  ${flexColumnBox};
   align-items: flex-start;
 `;
