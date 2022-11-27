@@ -1,13 +1,17 @@
 import { ThemeProvider } from "styled-components";
 import theme from "styles/theme";
-import useTheme from "hooks/useTheme";
+import useThemeType from "hooks/useThemeType";
 import MainPage from "pages/MainPage";
+import useBackgroundColor from "hooks/useBackgroundColor";
 
 function App() {
-  const selectedTheme = useTheme();
+  const selectedThemeType = useThemeType();
+  const selectedTheme = theme[selectedThemeType];
+
+  useBackgroundColor(selectedTheme.backgroundColor);
 
   return (
-    <ThemeProvider theme={theme[selectedTheme]}>
+    <ThemeProvider theme={selectedTheme}>
       <MainPage />
     </ThemeProvider>
   );
