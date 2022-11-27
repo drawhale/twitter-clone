@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "name": "Netflixth",
+      "id": "@netflixth",
+      "imageUrl": "https://pbs.twimg.com/profile_images/856909714390634496/GrQzag25_x96.jpg"
+    },
+    {
+      "name": "KBS Drama",
+      "id": "@KBS_drama",
+      "imageUrl": "https://pbs.twimg.com/profile_images/1331166993811030016/fBXPW-jV_x96.jpg"
+    },
+    {
+      "name": "WATCHA",
+      "id": "@watcha_kr",
+      "imageUrl": "https://pbs.twimg.com/profile_images/1520993105708994561/OeLwwD7z_x96.jpg"
+    }
+  ]
+}
