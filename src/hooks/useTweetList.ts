@@ -31,7 +31,7 @@ const useTweetList = () => {
 
   useEffect(() => {
     getList();
-  }, []);
+  }, [getList]);
 
   const fetchMore = () => {
     getList();
