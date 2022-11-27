@@ -1,5 +1,19 @@
 import { fetchTweetList } from "api/api";
 
+// User Type
+export interface UserItem {
+  id: number;
+  name: string;
+  screen_name: string;
+  description: string;
+  followers_count: number;
+  friends_count: number;
+  favourites_count: number;
+  created_at: string;
+  profile_image_url_https: string;
+}
+
+// Tweet Type
 interface TweetMediaItem {
   media_url: string;
   type: "photo" | "video";
@@ -20,14 +34,15 @@ export interface TweetItem {
 }
 
 export interface TweetListResponse {
+  user: UserItem[];
   tweets: TweetItem[];
 }
 
-const trendRepository = {
+const tweetRepository = {
   get: async () => {
     const result: TweetListResponse = await fetchTweetList();
-    return result.tweets;
+    return result;
   },
 };
 
-export default trendRepository;
+export default tweetRepository;

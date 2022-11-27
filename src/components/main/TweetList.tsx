@@ -1,12 +1,23 @@
 import styled from "styled-components";
 import { flexColumnBox } from "styles";
+import TweetListItem from "components/main/TweetListItem";
+import useTweetList from "hooks/useTweetList";
 
 import type { FC } from "react";
 
 const TweetList: FC = () => {
+  const { list, fetchMore } = useTweetList();
+
   return (
     <Wrapper>
-      <div style={{ height: "10000px" }}>List</div>
+      {list.map((item, index) =>
+        item.type === "tweet" ? (
+          <TweetListItem key={index} data={item.data} />
+        ) : (
+          <div>user</div>
+        )
+      )}
+      <button onClick={fetchMore}>더보기 버튼</button>
     </Wrapper>
   );
 };
