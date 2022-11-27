@@ -5,6 +5,7 @@ import TweetPost from "components/main/TweetPost";
 import TweetList from "components/main/TweetList";
 import SearchBar from "components/main/SearchBar";
 import TrendCard from "components/main/TrendCard";
+import RecommendedFollowCard from "./main/RecommendedFollowCard";
 
 import type { FC } from "react";
 
@@ -23,6 +24,9 @@ const Main: FC = () => {
           <TrendCardWrapper>
             <TrendCard />
           </TrendCardWrapper>
+          <FollowCardWrapper>
+            <RecommendedFollowCard />
+          </FollowCardWrapper>
         </RightWrapper>
       </SplitWrapper>
     </Wrapper>
@@ -72,5 +76,9 @@ const EmptyWrapper = styled.div`
 `;
 
 const TrendCardWrapper = styled.div`
+  margin-bottom: 16px;
+`;
+
+const FollowCardWrapper = styled.div`
   margin-bottom: 16px;
 `;

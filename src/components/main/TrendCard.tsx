@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import styled from "styled-components";
 import Card from "components/common/Card";
 import trendRepository from "api/trendRepository";
 import TrendListItem from "components/main/TrendListItem";

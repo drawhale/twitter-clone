@@ -4,41 +4,24 @@ import { flexColumnBox, flexRowBox } from "styles";
 import type { FC, MouseEventHandler, ReactNode } from "react";
 
 type Props = {
-  height?: number;
-  isDisabled?: boolean;
   onClick?: MouseEventHandler;
   children: ReactNode;
 };
 
-const Button: FC<Props> = ({
-  height = 36,
-  isDisabled = false,
-  onClick,
-  children,
-}) => {
+const FollowButton: FC<Props> = ({ onClick, children }) => {
   return (
-    <StyledDiv
-      role="button"
-      $height={height}
-      $isDisabled={isDisabled}
-      onClick={onClick}
-    >
+    <StyledDiv role="button" onClick={onClick}>
       <Wrapper>{children}</Wrapper>
     </StyledDiv>
   );
 };
 
-export default Button;
+export default FollowButton;
 
-type StyleDivProps = {
-  $height: number;
-  $isDisabled: boolean;
-};
-
-const StyledDiv = styled.div<StyleDivProps>`
+const StyledDiv = styled.div`
   ${flexColumnBox};
-  min-width: ${(props) => props.$height}px;
-  min-height: ${(props) => props.$height}px;
+  min-width: 32px;
+  min-height: 32px;
   padding: 0 16px;
   outline-tyle: none;
   text-decoration: none;
@@ -51,15 +34,13 @@ const StyledDiv = styled.div<StyleDivProps>`
   border: 1px solid rgba(0, 0, 0, 0);
 
   ${(props) => `
-    color: ${props.theme.buttonTextColor};
-    background-color: ${props.theme.buttonBackgroundColor};
+    color: ${props.theme.subButtonTextColor};
+    background-color: ${props.theme.subButtonBackgroundColor};
 
     &:hover {
-      background-color: ${props.theme.buttonHoverBackgroundColor};
+      background-color: ${props.theme.subButtonHoverBackgroundColor};
     }
   `}
-
-  ${(props) => props.$isDisabled && `opacity: 0.5;`}
 `;
 
 const Wrapper = styled.div`
