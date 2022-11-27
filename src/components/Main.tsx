@@ -5,7 +5,8 @@ import TweetPost from "components/main/TweetPost";
 import TweetList from "components/main/TweetList";
 import SearchBar from "components/main/SearchBar";
 import TrendCard from "components/main/TrendCard";
-import RecommendedFollowCard from "./main/RecommendedFollowCard";
+import RecommendedFollowCard from "components/main/RecommendedFollowCard";
+import FooterNav from "components/main/FooterNav";
 
 import type { FC } from "react";
 
@@ -27,6 +28,7 @@ const Main: FC = () => {
           <FollowCardWrapper>
             <RecommendedFollowCard />
           </FollowCardWrapper>
+          <FooterNav />
         </RightWrapper>
       </SplitWrapper>
     </Wrapper>

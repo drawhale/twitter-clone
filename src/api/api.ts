@@ -1,5 +1,4 @@
 import axios from "axios";
-import { TrendItem } from "./trendRepository";
 
 const BASE_API_URL = "/mocks";
 
