@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { flexColumnBox, flexRowBox } from "styles";
+import TweetListHeader from "./main/TweetListHeader";
+import TweetList from "components/main/TweetList";
 
 import type { FC } from "react";
 
@@ -7,7 +9,10 @@ const Main: FC = () => {
   return (
     <Wrapper>
       <SplitWrapper>
-        <LeftWrapper>main</LeftWrapper>
+        <LeftWrapper>
+          <TweetListHeader />
+          <TweetList />
+        </LeftWrapper>
         <RightWrapper>side</RightWrapper>
       </SplitWrapper>
     </Wrapper>
@@ -36,6 +41,12 @@ const LeftWrapper = styled.div`
   width: 100%;
   max-width: 600px;
   min-height: 100%;
+  z-index: 1;
+
+  ${(props) => `
+    background-color: ${props.theme.backgroundColor};
+    border: 1px solid ${props.theme.borderColor};
+  `}
 `;
 
 const RightWrapper = styled.div`
