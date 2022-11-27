@@ -18,7 +18,7 @@ const useTheme = () => {
     return () => {
       darkModePreference.removeEventListener("change", handleChange);
     };
-  }, []);
+  }, [darkModePreference]);
 
   return theme;
 };

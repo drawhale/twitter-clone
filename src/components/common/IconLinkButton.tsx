@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { flexColumnBox, flexRowBox, textEllipsis } from "styles";
 
-import type { FC, ReactElement, ReactNode, SVGProps } from "react";
+import type { FC, ReactElement, SVGProps } from "react";
 
 type Props = {
   href: string;
