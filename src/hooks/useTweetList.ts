@@ -1,45 +1,33 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import tweetRepository from "api/tweetRepository";
 
 import type { UserItem, TweetItem } from "api/tweetRepository";
 
-type ListItemUser = {
-  type: "user";
-  data: UserItem[];
+type ListItem = TweetItem & {
+  user: UserItem;
 };
-
-type ListItemTweet = {
-  type: "tweet";
-  data: TweetItem;
-};
-
-type ListItem = ListItemUser | ListItemTweet;
 
 const useTweetList = () => {
   const [list, setList] = useState<ListItem[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const getList = async () => {
+  const getList = useCallback(async () => {
     try {
       setIsLoading(true);
 
-      const list = await tweetRepository.get();
-      const tweetList: ListItemTweet[] = list.tweets.map((tweet) => ({
-        type: "tweet",
-        data: tweet,
+      const { user, tweets } = await tweetRepository.get();
+      const tweetList: ListItem[] = tweets.map((tweet) => ({
+        ...tweet,
+        user: user.find((item) => item.id === Number(tweet.user_id_str))!,
       }));
-      const userList: ListItemUser = {
-        type: "user",
-        data: list.user,
-      };
 
-      setList((prevList) => [...prevList, ...tweetList, userList]);
+      setList((prevList) => [...prevList, ...tweetList]);
       setIsLoading(false);
     } catch (error) {
       setError(error);
     }
-  };
+  }, []);
 
   useEffect(() => {
     getList();

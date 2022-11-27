@@ -10,13 +10,9 @@ const TweetList: FC = () => {
 
   return (
     <Wrapper>
-      {list.map((item, index) =>
-        item.type === "tweet" ? (
-          <TweetListItem key={index} data={item.data} />
-        ) : (
-          <div>user</div>
-        )
-      )}
+      {list.map((item, index) => (
+        <TweetListItem key={index} data={item} />
+      ))}
       <button onClick={fetchMore}>더보기 버튼</button>
     </Wrapper>
   );
