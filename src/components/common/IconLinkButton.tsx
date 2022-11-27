@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { flexColumnBox, flexRowBox } from "styles";
+import { flexColumnBox, flexRowBox, textEllipsis } from "styles";
 
 import type { FC, ReactElement, ReactNode, SVGProps } from "react";
 
@@ -64,11 +64,12 @@ const IconWrapper = styled.div`
 
 const TextWrapper = styled.span`
   margin: 0 16px 0 20px;
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
+  ${textEllipsis};
+
+  ${(props) => `
+    color: ${props.theme.textColor}
+  `};
 `;

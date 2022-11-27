@@ -23,6 +23,7 @@ const StyledA = styled.a`
   min-width: 52px;
   min-height: 52px;
   outline-tyle: none;
+  text-decoration: none;
   transition-property: background-color, box-shadow;
   transition-duration: 0.2s;
   user-select: none;

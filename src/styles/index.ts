@@ -28,3 +28,10 @@ export const flexRowBox = css`
   position: relative;
   z-index: 0;
 `;
+
+export const textEllipsis = css`
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+`;

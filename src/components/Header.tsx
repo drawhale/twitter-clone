@@ -3,6 +3,7 @@ import { flexColumnBox } from "styles";
 import LogoLinkButton from "components/common/LogoLinkButton";
 import IconLinkButton from "components/common/IconLinkButton";
 import LinkButton from "components/common/LinkButton";
+import AccountInfoButton from "./header/AccountInfoButton";
 
 import HomeIcon from "components/common/icons/HomeIcon";
 import SearchIcon from "components/common/icons/SearchIcon";
@@ -43,7 +44,7 @@ const Header: FC = () => {
             </ButtonWrapper>
           </NavWrapper>
           <AccountWrapper>
-            <div>Name</div>
+            <AccountInfoButton />
           </AccountWrapper>
         </ColumnWrapper>
       </FixedWrapper>
@@ -81,6 +82,7 @@ const NavWrapper = styled.div`
 
 const AccountWrapper = styled.div`
   ${flexColumnBox};
+  margin: 12px 0;
 `;
 
 const StyledH1 = styled.h1`
