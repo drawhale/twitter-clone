@@ -23,24 +23,24 @@ const Header: FC = () => {
         <ColumnWrapper>
           <NavWrapper>
             <StyledH1>
-              <LogoLinkButton href="#" />
+              <LogoLinkButton href="/#" />
             </StyledH1>
             <StyledNav>
-              <IconLinkButton href="#" icon={<HomeIcon />} text="홈" />
-              <IconLinkButton href="#" icon={<SharpIcon />} text="탐색하기" />
+              <IconLinkButton href="/#" icon={<HomeIcon />} text="홈" />
+              <IconLinkButton href="/#" icon={<SharpIcon />} text="탐색하기" />
               <IconLinkButton
-                href="#"
+                href="/#"
                 icon={<NotificationIcon />}
                 text="일림"
               />
-              <IconLinkButton href="#" icon={<MessageIcon />} text="쪽지" />
-              <IconLinkButton href="#" icon={<BookmarkIcon />} text="북마크" />
-              <IconLinkButton href="#" icon={<ListIcon />} text="리스트" />
-              <IconLinkButton href="#" icon={<ProfileIcon />} text="프로필" />
-              <IconLinkButton href="#" icon={<MoreIcon />} text="더 보기" />
+              <IconLinkButton href="/#" icon={<MessageIcon />} text="쪽지" />
+              <IconLinkButton href="/#" icon={<BookmarkIcon />} text="북마크" />
+              <IconLinkButton href="/#" icon={<ListIcon />} text="리스트" />
+              <IconLinkButton href="/#" icon={<ProfileIcon />} text="프로필" />
+              <IconLinkButton href="/#" icon={<MoreIcon />} text="더 보기" />
             </StyledNav>
             <ButtonWrapper>
-              <LinkButton href="#">트윗하기</LinkButton>
+              <LinkButton href="/#">트윗하기</LinkButton>
             </ButtonWrapper>
           </NavWrapper>
           <AccountWrapper>
