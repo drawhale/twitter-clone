@@ -7,6 +7,7 @@ import SearchBar from "components/main/SearchBar";
 import TrendCard from "components/main/TrendCard";
 import RecommendedFollowCard from "components/main/RecommendedFollowCard";
 import FooterNav from "components/main/FooterNav";
+import Divider from "./common/Divider";
 
 import type { FC } from "react";
 
@@ -17,6 +18,7 @@ const Main: FC = () => {
         <LeftWrapper>
           <TweetListHeader />
           <TweetPost />
+          <Divider />
           <TweetList />
         </LeftWrapper>
         <RightWrapper>
