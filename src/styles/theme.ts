@@ -1,5 +1,6 @@
 const theme = {
   light: {
+    primaryColor: "rgb(29, 155, 240)",
     backgroundColor: "rgb(255, 255, 255)",
     textColor: "rgb(0, 0, 0)",
     subTextColor: "rgb(0, 0, 0)",
@@ -17,6 +18,7 @@ const theme = {
     cardHoverBackgroundColor: "rgb(255, 255, 255, 0.03)",
   },
   dark: {
+    primaryColor: "rgb(29, 155, 240)",
     backgroundColor: "rgb(0, 0, 0)",
     textColor: "rgb(231, 233, 234)",
     subTextColor: "rgb(113, 118, 123)",

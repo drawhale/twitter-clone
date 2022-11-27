@@ -19,7 +19,7 @@ const StyledA = styled.a`
   font-weight: 400;
   font-size: 15px;
   line-height: 20px;
-  color: ${(props) => props.theme.buttonBackgroundColor};
+  color: ${(props) => props.theme.primaryColor};
 
   &:hover {
     ${(props) => `

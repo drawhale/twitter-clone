@@ -113,7 +113,7 @@ const MenuWrapper = styled.div`
     min-height: 36px;
 
     svg {
-      color: ${(props) => props.theme.buttonBackgroundColor};
+      color: ${(props) => props.theme.primaryColor};
       fill: currentColor;
     }
   }

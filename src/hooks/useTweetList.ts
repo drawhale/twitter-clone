@@ -3,7 +3,7 @@ import tweetRepository from "api/tweetRepository";
 
 import type { UserItem, TweetItem } from "api/tweetRepository";
 
-type ListItem = TweetItem & {
+export type ListItem = TweetItem & {
   user: UserItem;
 };
 
