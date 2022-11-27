@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { flexColumnBox, flexRowBox } from "styles";
 
-import type { FC, MouseEventHandler, ReactElement, SVGProps } from "react";
+import type { FC, ReactElement, SVGProps, MouseEventHandler } from "react";
 
 type Props = {
   icon: ReactElement<SVGProps<SVGSVGElement>>;
@@ -10,7 +10,7 @@ type Props = {
 
 const IconButton: FC<Props> = ({ icon, onClick }) => {
   return (
-    <Wrapper onClick={onClick}>
+    <Wrapper role="button" onClick={onClick}>
       <IconWrapper>{icon}</IconWrapper>
     </Wrapper>
   );
@@ -29,6 +29,7 @@ const Wrapper = styled.div`
   transition-duration: 0.2s;
   user-select: none;
   cursor: pointer;
+  border: 1px solid rgb(0, 0, 0, 0);
 
   &:hover {
     background-color: ${(props) => props.theme.iconButtonHoverColor};

@@ -70,6 +70,6 @@ const TextWrapper = styled.span`
   ${textEllipsis};
 
   ${(props) => `
-    color: ${props.theme.textColor}
+    color: ${props.theme.textColor};
   `};
 `;
