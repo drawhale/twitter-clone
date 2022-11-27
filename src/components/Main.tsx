@@ -3,6 +3,7 @@ import { flexColumnBox, flexRowBox } from "styles";
 import TweetListHeader from "components/main/TweetListHeader";
 import TweetPost from "components/main/TweetPost";
 import TweetList from "components/main/TweetList";
+import SearchBar from "components/main/SearchBar";
 
 import type { FC } from "react";
 
@@ -15,7 +16,9 @@ const Main: FC = () => {
           <TweetPost />
           <TweetList />
         </LeftWrapper>
-        <RightWrapper>side</RightWrapper>
+        <RightWrapper>
+          <SearchBar />
+        </RightWrapper>
       </SplitWrapper>
     </Wrapper>
   );
@@ -56,4 +59,5 @@ const RightWrapper = styled.div`
   ${flexColumnBox};
   width: 350px;
   margin-right: 10px;
+  padding: 12px 0 64px;
 `;

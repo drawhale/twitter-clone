@@ -6,7 +6,7 @@ import type { FC } from "react";
 const TweetList: FC = () => {
   return (
     <Wrapper>
-      <div>List</div>
+      <div style={{ height: "10000px" }}>List</div>
     </Wrapper>
   );
 };

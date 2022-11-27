@@ -81,8 +81,8 @@ const TextInputWrapper = styled.div`
 `;
 
 const TextInput = styled.input`
-  flex-grow: 1;
   all: unset;
+  flex-grow: 1;
   height: 52px;
   background-color: transparent;
   font-weight: 400px;

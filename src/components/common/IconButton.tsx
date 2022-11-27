@@ -29,7 +29,7 @@ const Wrapper = styled.div`
   transition-duration: 0.2s;
   user-select: none;
   cursor: pointer;
-  border: 1px solid rgb(0, 0, 0, 0);
+  border: 1px solid rgba(0, 0, 0, 0);
 
   &:hover {
     background-color: ${(props) => props.theme.iconButtonHoverColor};

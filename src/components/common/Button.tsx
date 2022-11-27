@@ -32,7 +32,7 @@ const StyledDiv = styled.div<{ $isDisabled: boolean }>`
   cursor: pointer;
   border-radius: 9999px;
   box-shadow: rgb(0 0 0 / 8%) 0px 8px 28px;
-  border: 1px solid rgb(0, 0, 0, 0);
+  border: 1px solid rgba(0, 0, 0, 0);
 
   ${(props) => `
     color: ${props.theme.buttonTextColor};

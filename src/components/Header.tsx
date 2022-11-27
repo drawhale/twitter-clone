@@ -6,7 +6,7 @@ import LinkButton from "components/common/LinkButton";
 import AccountInfoButton from "./header/AccountInfoButton";
 
 import HomeIcon from "components/common/icons/HomeIcon";
-import SearchIcon from "components/common/icons/SearchIcon";
+import SharpIcon from "components/common/icons/SharpIcon";
 import NotificationIcon from "components/common/icons/NotificationIcon";
 import MessageIcon from "components/common/icons/MessageIcon";
 import BookmarkIcon from "components/common/icons/BookmarkIcon";
@@ -27,7 +27,7 @@ const Header: FC = () => {
             </StyledH1>
             <StyledNav>
               <IconLinkButton href="#" icon={<HomeIcon />} text="홈" />
-              <IconLinkButton href="#" icon={<SearchIcon />} text="탐색하기" />
+              <IconLinkButton href="#" icon={<SharpIcon />} text="탐색하기" />
               <IconLinkButton
                 href="#"
                 icon={<NotificationIcon />}

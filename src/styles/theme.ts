@@ -11,6 +11,8 @@ const theme = {
     buttonBackgroundColor: "rgb(29, 155, 240)",
     buttonHoverBackgroundColor: "rgb(26, 140, 216)",
     borderColor: "rgb(47, 51, 54)",
+    searchBarBackgroundColor: "rgb(32, 35, 39)",
+    searchBarIconColor: "rgb(113, 118, 123)",
   },
   dark: {
     backgroundColor: "rgb(0, 0, 0)",
@@ -24,6 +26,8 @@ const theme = {
     buttonBackgroundColor: "rgb(29, 155, 240)",
     buttonHoverBackgroundColor: "rgb(26, 140, 216)",
     borderColor: "rgb(47, 51, 54)",
+    searchBarBackgroundColor: "rgb(32, 35, 39)",
+    searchBarIconColor: "rgb(113, 118, 123)",
   },
 };
 
