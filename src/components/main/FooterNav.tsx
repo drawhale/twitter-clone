@@ -8,12 +8,12 @@ const FooterNav: FC = () => {
   return (
     <Wrapper>
       <StyledNav>
-        <a>이용약관</a>
-        <a>개인정보 처리방침</a>
-        <a>쿠키 정책</a>
-        <a>접근성</a>
-        <a>광고 정보</a>
-        <a>
+        <a href="#">이용약관</a>
+        <a href="#">개인정보 처리방침</a>
+        <a href="#">쿠키 정책</a>
+        <a href="#">접근성</a>
+        <a href="#">광고 정보</a>
+        <a href="#">
           더 보기
           <EllipsisIcon />
         </a>

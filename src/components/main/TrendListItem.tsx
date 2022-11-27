@@ -11,12 +11,12 @@ type Props = {
 };
 
 const TrendListItem: FC<Props> = ({ data }) => {
-  const { title, description, tweetCount } = data;
+  const { title, description, tweet_count } = data;
   return (
     <Wrapper>
       <Description>{description}</Description>
       <Title>{title}</Title>
-      <Count>{tweetCount.toLocaleString()} 트윗</Count>
+      <Count>{tweet_count.toLocaleString()} 트윗</Count>
       <IconWrapper>
         <IconButton icon={<EllipsisIcon />} />
       </IconWrapper>

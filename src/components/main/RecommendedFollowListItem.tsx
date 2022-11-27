@@ -11,11 +11,11 @@ type Props = {
 };
 
 const RecommendedFollowListItem: FC<Props> = ({ data }) => {
-  const { name, id, imageUrl } = data;
+  const { name, id, image_url } = data;
   return (
     <Wrapper>
       <ImageWrapper>
-        <img src={imageUrl} alt={name} />
+        <img src={image_url} alt={name} />
       </ImageWrapper>
       <ColumnWrapper>
         <Name>

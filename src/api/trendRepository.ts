@@ -3,7 +3,7 @@ import { fetchTrendList } from "api/api";
 export interface TrendItem {
   title: string;
   description: string;
-  tweetCount: number;
+  tweet_count: number;
 }
 
 const trendRepository = {

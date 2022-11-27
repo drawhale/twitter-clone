@@ -3,7 +3,7 @@ import { fetchRecommendedFollow } from "api/api";
 export interface RecommendedFollowItem {
   name: string;
   id: string;
-  imageUrl: string;
+  image_url: string;
 }
 
 const recommendedFollowRepository = {
