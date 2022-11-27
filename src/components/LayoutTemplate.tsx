@@ -26,7 +26,6 @@ const Wrapper = styled.div`
 
   ${(props) => `
     color: ${props.theme.textColor};
-    background-color: ${props.theme.backgroundColor}
   `}
 `;
 

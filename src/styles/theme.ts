@@ -9,6 +9,7 @@ const theme = {
     buttonTextColor: "rgb(255, 255, 255)",
     buttonBackgroundColor: "rgb(29, 155, 240)",
     buttonHoverBackgroundColor: "rgb(26, 140, 216)",
+    borderColor: "rgb(47, 51, 54)",
   },
   dark: {
     backgroundColor: "rgb(0, 0, 0)",
@@ -20,6 +21,7 @@ const theme = {
     buttonTextColor: "rgb(255, 255, 255)",
     buttonBackgroundColor: "rgb(29, 155, 240)",
     buttonHoverBackgroundColor: "rgb(26, 140, 216)",
+    borderColor: "rgb(47, 51, 54)",
   },
 };
 

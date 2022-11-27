@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 
-type Theme = "light" | "dark";
+export type ThemeType = "light" | "dark";
 
-const useTheme = () => {
+/** 시스템 설정에 따라 라이트/다크 모드 반환
+ * @returns "light" | "dark"
+ */
+const useThemeType = () => {
   const darkModePreference =
     window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)");
   const initTheme = darkModePreference.matches ? "dark" : "light";
-  const [theme, setTheme] = useState<Theme>(initTheme);
+  const [theme, setTheme] = useState<ThemeType>(initTheme);
 
   useEffect(() => {
     const handleChange = (e: MediaQueryListEvent) => {
@@ -23,4 +26,4 @@ const useTheme = () => {
   return theme;
 };
 
-export default useTheme;
+export default useThemeType;
