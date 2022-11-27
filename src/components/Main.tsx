@@ -4,6 +4,7 @@ import TweetListHeader from "components/main/TweetListHeader";
 import TweetPost from "components/main/TweetPost";
 import TweetList from "components/main/TweetList";
 import SearchBar from "components/main/SearchBar";
+import TrendCard from "components/main/TrendCard";
 
 import type { FC } from "react";
 
@@ -18,6 +19,10 @@ const Main: FC = () => {
         </LeftWrapper>
         <RightWrapper>
           <SearchBar />
+          <EmptyWrapper />
+          <TrendCardWrapper>
+            <TrendCard />
+          </TrendCardWrapper>
         </RightWrapper>
       </SplitWrapper>
     </Wrapper>
@@ -60,4 +65,12 @@ const RightWrapper = styled.div`
   width: 350px;
   margin-right: 10px;
   padding: 12px 0 64px;
+`;
+
+const EmptyWrapper = styled.div`
+  height: 53px;
+`;
+
+const TrendCardWrapper = styled.div`
+  margin-bottom: 16px;
 `;

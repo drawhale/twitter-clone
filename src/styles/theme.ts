@@ -13,6 +13,8 @@ const theme = {
     borderColor: "rgb(47, 51, 54)",
     searchBarBackgroundColor: "rgb(32, 35, 39)",
     searchBarIconColor: "rgb(113, 118, 123)",
+    cardBackgroundColor: "rgb(22, 24, 28)",
+    cardHoverBackgroundColor: "rgb(255, 255, 255, 0.03)",
   },
   dark: {
     backgroundColor: "rgb(0, 0, 0)",
@@ -28,6 +30,8 @@ const theme = {
     borderColor: "rgb(47, 51, 54)",
     searchBarBackgroundColor: "rgb(32, 35, 39)",
     searchBarIconColor: "rgb(113, 118, 123)",
+    cardBackgroundColor: "rgb(22, 24, 28)",
+    cardHoverBackgroundColor: "rgb(255, 255, 255, 0.03)",
   },
 };
 
