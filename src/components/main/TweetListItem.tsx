@@ -5,6 +5,7 @@ import EllipsisIcon from "components/common/icons/EllipsisIcon";
 import { elapsedTime } from "utils/date";
 import FullText from "components/main/FullText";
 import HashTagList from "components/main/HashTagList";
+import Media from "components/main/Media";
 
 import type { FC } from "react";
 import type { ListItem } from "hooks/useTweetList";
@@ -14,7 +15,7 @@ type Props = {
 };
 
 const TweetListItem: FC<Props> = ({ data }) => {
-  const { user, full_text, hashtags = [], created_at } = data;
+  const { user, created_at, full_text, hashtags = [], media } = data;
   const { name, id, profile_image_url_https } = user;
 
   return (
@@ -35,6 +36,9 @@ const TweetListItem: FC<Props> = ({ data }) => {
           </RowWrapper>
           <FullText full_text={full_text} hashtags={hashtags} />
           <HashTagList hashtags={hashtags} />
+          <MediaWrapper>
+            <Media media={media} />
+          </MediaWrapper>
         </ColumnWrapper>
       </StyledArticle>
     </Wrapper>
@@ -143,4 +147,9 @@ const IconWrapper = styled.div`
       `}
     }
   }
+`;
+
+const MediaWrapper = styled.div`
+  ${flexColumnBox};
+  margin-top: 12px;
 `;
