@@ -6,7 +6,7 @@ import type { FC, ReactElement, SVGProps } from "react";
 type Props = {
   href: string;
   icon: ReactElement<SVGProps<SVGSVGElement>>;
-  text: string;
+  text?: string;
 };
 
 const IconLinkButton: FC<Props> = ({ href, icon, text }) => {
@@ -14,7 +14,7 @@ const IconLinkButton: FC<Props> = ({ href, icon, text }) => {
     <StyledA href={href}>
       <Wrapper>
         <IconWrapper>{icon}</IconWrapper>
-        <TextWrapper>{text}</TextWrapper>
+        {text && <TextWrapper>{text}</TextWrapper>}
       </Wrapper>
     </StyledA>
   );

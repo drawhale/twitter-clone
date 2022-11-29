@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { flexColumnBox, flexRowBox, textEllipsis } from "styles";
 import EllipsisIcon from "components/common/icons/EllipsisIcon";
+import useWindowSize from "hooks/useWindowSize";
+import breakpoint from "styles/breakpoint";
 
 import type { FC } from "react";
 
@@ -9,21 +11,28 @@ type Props = {
 };
 
 const AccountInfoButton: FC<Props> = ({ onClick }) => {
+  const windowSize = useWindowSize();
+
   const userName = "User Name";
   const userId = "@userid";
+  const shouldRenderText = windowSize.width > breakpoint.desktopLarge;
 
   return (
     <StyledButton aria-label="계정 메뉴" role="button" onClick={onClick}>
       <AvatarImage />
-      <InfoWrapper>
-        <ColumnWrapper>
-          <UserName>{userName}</UserName>
-          <UserId>{userId}</UserId>
-        </ColumnWrapper>
-      </InfoWrapper>
-      <MoreIconWrapper>
-        <EllipsisIcon />
-      </MoreIconWrapper>
+      {shouldRenderText && (
+        <>
+          <InfoWrapper>
+            <ColumnWrapper>
+              <UserName>{userName}</UserName>
+              <UserId>{userId}</UserId>
+            </ColumnWrapper>
+          </InfoWrapper>
+          <MoreIconWrapper>
+            <EllipsisIcon />
+          </MoreIconWrapper>
+        </>
+      )}
     </StyledButton>
   );
 };

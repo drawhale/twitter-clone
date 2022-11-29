@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { flexColumnBox, flexRowBox } from "styles";
+import useWindowSize from "hooks/useWindowSize";
+import breakpoint from "styles/breakpoint";
 import TweetListHeader from "components/main/TweetListHeader";
 import TweetPost from "components/main/TweetPost";
 import TweetList from "components/main/TweetList";
@@ -12,6 +14,10 @@ import Divider from "./common/Divider";
 import type { FC } from "react";
 
 const Main: FC = () => {
+  const windowSize = useWindowSize();
+
+  const shouldRenderSidebar = windowSize.width > breakpoint.desktopSmall;
+
   return (
     <Wrapper>
       <SplitWrapper>
@@ -21,17 +27,19 @@ const Main: FC = () => {
           <Divider />
           <TweetList />
         </LeftWrapper>
-        <RightWrapper>
-          <SearchBar />
-          <EmptyWrapper />
-          <TrendCardWrapper>
-            <TrendCard />
-          </TrendCardWrapper>
-          <FollowCardWrapper>
-            <RecommendedFollowCard />
-          </FollowCardWrapper>
-          <FooterNav />
-        </RightWrapper>
+        {shouldRenderSidebar && (
+          <RightWrapper>
+            <SearchBar />
+            <EmptyWrapper />
+            <TrendCardWrapper>
+              <TrendCard />
+            </TrendCardWrapper>
+            <FollowCardWrapper>
+              <RecommendedFollowCard />
+            </FollowCardWrapper>
+            <FooterNav />
+          </RightWrapper>
+        )}
       </SplitWrapper>
     </Wrapper>
   );
@@ -40,11 +48,22 @@ const Main: FC = () => {
 export default Main;
 
 const Wrapper = styled.div`
+  ${flexColumnBox};
   width: 990px;
   flex-grow: 1;
   flex-shrink: 1;
 
-  ${flexColumnBox};
+  @media screen and (max-width: ${breakpoint.desktopMedium}px) {
+    width: 920px;
+  }
+
+  @media screen and (max-width: ${breakpoint.desktopSmall}px) {
+    width: 600px;
+  }
+
+  @media screen and (max-width: ${breakpoint.tablet}px) {
+    width: auto;
+  }
 `;
 
 const SplitWrapper = styled.div`
@@ -73,6 +92,10 @@ const RightWrapper = styled.div`
   width: 350px;
   margin-right: 10px;
   padding: 12px 0 64px;
+
+  @media screen and (max-width: ${breakpoint.desktopMedium}px) {
+    width: 290px;
+  }
 `;
 
 const EmptyWrapper = styled.div`

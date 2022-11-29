@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { flexColumnBox, flexRowBox } from "styles";
+import breakpoint from "styles/breakpoint";
 import SearchIcon from "components/common/icons/SearchIcon";
 
 import type { FC } from "react";
@@ -33,6 +34,10 @@ const FixedWrapper = styled.div`
   ${(props) => `
     background-color: ${props.theme.backgroundColor};
   `}
+
+  @media screen and (max-width: ${breakpoint.desktopMedium}px) {
+    width: 290px;
+  }
 `;
 
 const Wrapper = styled.div`
