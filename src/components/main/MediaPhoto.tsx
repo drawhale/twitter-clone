@@ -51,11 +51,11 @@ const MediaPhoto: FC<Props> = ({ media }) => {
     <RatioWrapper $ratio={wrapperRatio}>
       <LayoutWrapper>
         <Wrapper>
-          {chunkPhotos.map((photos) => (
-            <RowWrapper>
-              {photos.map((photo, index) => (
-                <ImageWrapper>
-                  <StyledImg key={index} src={photo.media_url} alt="" />
+          {chunkPhotos.map((photos, rowIndex) => (
+            <RowWrapper key={rowIndex}>
+              {photos.map((photo, colIndex) => (
+                <ImageWrapper key={colIndex}>
+                  <StyledImg src={photo.media_url} alt="" />
                 </ImageWrapper>
               ))}
             </RowWrapper>

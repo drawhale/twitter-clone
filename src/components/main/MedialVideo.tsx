@@ -1,16 +1,25 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { flexColumnBox } from "styles";
 
-import type { FC } from "react";
+import type { FC, ReactEventHandler } from "react";
 import type { ListItem } from "hooks/useTweetList";
 
 type Props = Pick<ListItem, "media">;
 
 const MedialVideo: FC<Props> = ({ media }) => {
+  const [wrapperRatio, setWrapperRatio] = useState(100);
   const { media_url } = media.filter((m) => m.type === "video")[0];
 
+  const handleLoadedMetadata: ReactEventHandler<HTMLVideoElement> = (e) => {
+    const target = e.target as HTMLVideoElement;
+    const width = target.videoWidth;
+    const height = target.videoHeight;
+    setWrapperRatio((height / width) * 100);
+  };
+
   return (
-    <RatioWrapper>
+    <RatioWrapper $ratio={wrapperRatio}>
       <LayoutWrapper>
         <Wrapper>
           <StyledVideo
@@ -20,6 +29,7 @@ const MedialVideo: FC<Props> = ({ media }) => {
             controls
             muted
             src={media_url}
+            onLoadedMetadata={handleLoadedMetadata}
           />
         </Wrapper>
       </LayoutWrapper>
@@ -29,10 +39,10 @@ const MedialVideo: FC<Props> = ({ media }) => {
 
 export default MedialVideo;
 
-const RatioWrapper = styled.div`
+const RatioWrapper = styled.div<{ $ratio: number }>`
   ${flexColumnBox};
   width: 100%;
-  padding-bottom: 100%;
+  padding-bottom: ${(props) => props.$ratio}%;
 `;
 
 const LayoutWrapper = styled.div`
