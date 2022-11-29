@@ -41,7 +41,7 @@ const TweetListItem: FC<Props> = ({ data }) => {
             <Separater>·</Separater>
             <Time>{elapsedTime(created_at)}</Time>
             <IconWrapper>
-              <IconButton icon={<EllipsisIcon />} />
+              <IconButton colorTheme="blue" icon={<EllipsisIcon />} />
             </IconWrapper>
           </RowWrapper>
           <FullText full_text={full_text} hashtags={hashtags} />

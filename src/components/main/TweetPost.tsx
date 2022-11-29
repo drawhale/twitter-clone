@@ -23,12 +23,12 @@ const TweetPost: FC = () => {
           <TextInput placeholder="무슨 일이 일어나고 있나요?" />
           <ControlWrapper>
             <MenuWrapper>
-              <IconButton aria-label="미디어" icon={<ImageIcon />} />
-              <IconButton icon={<GifIcon />} />
-              <IconButton icon={<VoteIcon />} />
-              <IconButton icon={<EmoticonIcon />} />
-              <IconButton icon={<CalendarIcon />} />
-              <IconButton icon={<MapIcon />} />
+              <IconButton colorTheme="blue" icon={<ImageIcon />} />
+              <IconButton colorTheme="blue" icon={<GifIcon />} />
+              <IconButton colorTheme="blue" icon={<VoteIcon />} />
+              <IconButton colorTheme="blue" icon={<EmoticonIcon />} />
+              <IconButton colorTheme="blue" icon={<CalendarIcon />} />
+              <IconButton colorTheme="blue" icon={<MapIcon />} />
             </MenuWrapper>
             <ButtonWrapper>
               <Button isDisabled={true}>트윗하기</Button>

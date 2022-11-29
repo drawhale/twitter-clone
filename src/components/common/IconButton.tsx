@@ -4,14 +4,14 @@ import { flexColumnBox, flexRowBox, getRGBA } from "styles";
 import type { FC, ReactElement, SVGProps, MouseEventHandler } from "react";
 
 type Props = {
-  colorTheme?: "blue" | "green" | "red";
+  colorTheme?: "default" | "blue" | "green" | "red";
   icon: ReactElement<SVGProps<SVGSVGElement>>;
   text?: string;
   onClick?: MouseEventHandler;
 };
 
 const IconButton: FC<Props> = ({
-  colorTheme = "blue",
+  colorTheme = "default",
   icon,
   text,
   onClick,
@@ -72,7 +72,7 @@ const Wrapper = styled.div<{ $colorTheme: string }>`
   align-items: center;
 
   ${(props) => `
-    color: ${props.theme.iconButtonTextColor};
+    color: ${props.theme.iconButtonTextColor[props.$colorTheme]};
 
     &:hover {
       ${IconBackgroundWrapper} {

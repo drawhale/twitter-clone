@@ -15,8 +15,18 @@ const theme = {
     searchBarIconColor: "rgb(113, 118, 123)",
     cardBackgroundColor: "rgb(22, 24, 28)",
     cardHoverBackgroundColor: "rgb(255, 255, 255, 0.03)",
-    iconButtonTextColor: "rgb(0, 0, 0)",
-    iconButtonHoverBackgroundColor: "rgba(0, 0, 0, 0)",
+    iconButtonTextColor: {
+      default: "rgb(239, 243, 244)",
+      blue: "rgb(113, 118, 123)",
+      green: "rgb(113, 118, 123)",
+      red: "rgb(113, 118, 123)",
+    },
+    iconButtonHoverTextColor: {
+      default: "rgb(239, 243, 244)",
+      blue: "rgb(29, 155, 240)",
+      green: "rgb(0, 186, 124)",
+      red: "rgb(249, 24, 128)",
+    },
   },
   dark: {
     primaryColor: "rgb(29, 155, 240)",
@@ -37,9 +47,14 @@ const theme = {
     searchBarIconColor: "rgb(113, 118, 123)",
     cardBackgroundColor: "rgb(22, 24, 28)",
     cardHoverBackgroundColor: "rgb(255, 255, 255, 0.03)",
-    iconButtonTextColor: "rgb(113, 118, 123)",
-    iconButtonHoverBackgroundColor: "rgba(29, 155, 240, 0.1)",
+    iconButtonTextColor: {
+      default: "rgb(239, 243, 244)",
+      blue: "rgb(113, 118, 123)",
+      green: "rgb(113, 118, 123)",
+      red: "rgb(113, 118, 123)",
+    },
     iconButtonHoverTextColor: {
+      default: "rgb(239, 243, 244)",
       blue: "rgb(29, 155, 240)",
       green: "rgb(0, 186, 124)",
       red: "rgb(249, 24, 128)",

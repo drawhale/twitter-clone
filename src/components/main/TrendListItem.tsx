@@ -19,7 +19,7 @@ const TrendListItem: FC<Props> = ({ data }) => {
       <Title>{title}</Title>
       <Count>{getNumberStringWithComma(tweet_count)} 트윗</Count>
       <IconWrapper>
-        <IconButton icon={<EllipsisIcon />} />
+        <IconButton colorTheme="blue" icon={<EllipsisIcon />} />
       </IconWrapper>
     </Wrapper>
   );
