@@ -3,6 +3,7 @@ import { flexColumnBox, flexRowBox } from "styles";
 import IconButton from "components/common/IconButton";
 import EllipsisIcon from "components/common/icons/EllipsisIcon";
 import { elapsedTime } from "utils/date";
+import FullText from "components/main/FullText";
 import HashTagList from "components/main/HashTagList";
 
 import type { FC } from "react";
@@ -32,8 +33,8 @@ const TweetListItem: FC<Props> = ({ data }) => {
               <IconButton icon={<EllipsisIcon />} />
             </IconWrapper>
           </RowWrapper>
-          <FullText>{full_text}</FullText>
-          <HashTagList data={hashtags} />
+          <FullText full_text={full_text} hashtags={hashtags} />
+          <HashTagList hashtags={hashtags} />
         </ColumnWrapper>
       </StyledArticle>
     </Wrapper>
@@ -142,15 +143,4 @@ const IconWrapper = styled.div`
       `}
     }
   }
-`;
-
-const FullText = styled.div`
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 20px;
-  white-space: pre-wrap;
-
-  ${(props) => `
-    color: ${props.theme.textColor};
-  `};
 `;

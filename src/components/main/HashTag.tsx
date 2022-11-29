@@ -8,7 +8,7 @@ type Props = {
 };
 
 const HashTag: FC<Props> = ({ href, children }) => {
-  return <StyledA href={href}>#{children}</StyledA>;
+  return <StyledA href={href}>{children}</StyledA>;
 };
 
 export default HashTag;

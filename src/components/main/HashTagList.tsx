@@ -4,18 +4,17 @@ import { flexRowBox } from "styles";
 import HashTag from "components/main/HashTag";
 
 import type { FC } from "react";
+import type { ListItem } from "hooks/useTweetList";
 
-type Props = {
-  data: string[];
-};
+type Props = Pick<ListItem, "hashtags">;
 
-const HashTagList: FC<Props> = ({ data }) => {
+const HashTagList: FC<Props> = ({ hashtags }) => {
   return (
     <Wrapper>
-      {data.map((tag) => (
+      {hashtags.map((tag, index) => (
         <Fragment key={tag}>
-          <HashTag href="/#">{tag}</HashTag>
-          <Empty> </Empty>
+          {index > 0 && <Empty> </Empty>}
+          <HashTag href="/#">#{tag}</HashTag>
         </Fragment>
       ))}
     </Wrapper>
