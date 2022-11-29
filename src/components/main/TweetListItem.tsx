@@ -6,6 +6,7 @@ import { elapsedTime } from "utils/date";
 import FullText from "components/main/FullText";
 import HashTagList from "components/main/HashTagList";
 import Media from "components/main/Media";
+import IconMenuBar from "components/main/IconMenuBar";
 
 import type { FC } from "react";
 import type { ListItem } from "hooks/useTweetList";
@@ -15,7 +16,16 @@ type Props = {
 };
 
 const TweetListItem: FC<Props> = ({ data }) => {
-  const { user, created_at, full_text, hashtags = [], media } = data;
+  const {
+    user,
+    created_at,
+    full_text,
+    hashtags = [],
+    media,
+    reply_count,
+    retweet_count,
+    favorite_count,
+  } = data;
   const { name, id, profile_image_url_https } = user;
 
   return (
@@ -39,6 +49,11 @@ const TweetListItem: FC<Props> = ({ data }) => {
           <MediaWrapper>
             <Media media={media} />
           </MediaWrapper>
+          <IconMenuBar
+            reply_count={reply_count}
+            retweet_count={retweet_count}
+            favorite_count={favorite_count}
+          />
         </ColumnWrapper>
       </StyledArticle>
     </Wrapper>
@@ -137,15 +152,6 @@ const IconWrapper = styled.div`
 
   > div {
     padding: 6px;
-
-    svg {
-      min-height: 20px;
-
-      ${(props) => `
-        color: ${props.theme.subTextColor};
-        fill: currentColor;
-      `}
-    }
   }
 `;
 

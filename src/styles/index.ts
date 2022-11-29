@@ -35,3 +35,6 @@ export const textEllipsis = css`
   text-overflow: ellipsis;
   white-space: nowrap;
 `;
+
+export const getRGBA = (rgb: string, alpha: number) =>
+  rgb.replace("rgb", "rgba").replace(")", `, ${alpha})`);

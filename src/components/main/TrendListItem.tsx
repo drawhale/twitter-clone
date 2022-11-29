@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { flexColumnBox } from "styles";
 import IconButton from "components/common/IconButton";
 import EllipsisIcon from "components/common/icons/EllipsisIcon";
+import { getNumberStringWithComma } from "utils/format";
 
 import type { FC } from "react";
 import type { TrendItem } from "api/trendRepository";
@@ -16,7 +17,7 @@ const TrendListItem: FC<Props> = ({ data }) => {
     <Wrapper>
       <Description>{description}</Description>
       <Title>{title}</Title>
-      <Count>{tweet_count.toLocaleString()} 트윗</Count>
+      <Count>{getNumberStringWithComma(tweet_count)} 트윗</Count>
       <IconWrapper>
         <IconButton icon={<EllipsisIcon />} />
       </IconWrapper>
@@ -78,14 +79,6 @@ const IconWrapper = styled.div`
 
   > div {
     padding: 6px;
-
-    svg {
-      min-height: 20px;
-
-      ${(props) => `
-        color: ${props.theme.subTextColor};
-        fill: currentColor;
-      `}
-    }
+    font-size: 15px;
   }
 `;

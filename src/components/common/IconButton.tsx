@@ -1,26 +1,37 @@
 import styled from "styled-components";
-import { flexColumnBox, flexRowBox } from "styles";
+import { flexColumnBox, flexRowBox, getRGBA } from "styles";
 
 import type { FC, ReactElement, SVGProps, MouseEventHandler } from "react";
 
 type Props = {
+  colorTheme?: "blue" | "green" | "red";
   icon: ReactElement<SVGProps<SVGSVGElement>>;
+  text?: string;
   onClick?: MouseEventHandler;
 };
 
-const IconButton: FC<Props> = ({ icon, onClick }) => {
+const IconButton: FC<Props> = ({
+  colorTheme = "blue",
+  icon,
+  text,
+  onClick,
+}) => {
   return (
-    <Wrapper role="button" onClick={onClick}>
-      <IconWrapper>{icon}</IconWrapper>
+    <Wrapper $colorTheme={colorTheme}>
+      <IconBackgroundWrapper role="button" onClick={onClick}>
+        <IconWrapper>{icon}</IconWrapper>
+      </IconBackgroundWrapper>
+      {text && <Text>{text}</Text>}
     </Wrapper>
   );
 };
 
 export default IconButton;
 
-const Wrapper = styled.div`
+const IconBackgroundWrapper = styled.div`
   ${flexColumnBox};
   max-width: 100%;
+  padding: 7px;
   align-items: center;
   border-radius: 9999px;
   color: inherit;
@@ -30,10 +41,6 @@ const Wrapper = styled.div`
   user-select: none;
   cursor: pointer;
   border: 1px solid rgba(0, 0, 0, 0);
-
-  &:hover {
-    background-color: ${(props) => props.theme.iconButtonHoverColor};
-  }
 `;
 
 const IconWrapper = styled.div`
@@ -43,9 +50,41 @@ const IconWrapper = styled.div`
   align-items: center;
 
   svg {
-    width: 20px;
-    height: 20px;
-    color: ${(props) => props.theme.iconColor};
+    max-width: 20px;
+    max-height: 20px;
+    width: 1.25em;
+    height: 1.25em;
     fill: currentColor;
   }
+`;
+
+const Text = styled.span`
+  margin-left: -8px;
+  padding: 0 12px;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  color: inherit;
+`;
+
+const Wrapper = styled.div<{ $colorTheme: string }>`
+  ${flexRowBox};
+  align-items: center;
+
+  ${(props) => `
+    color: ${props.theme.iconButtonTextColor};
+
+    &:hover {
+      ${IconBackgroundWrapper} {
+        color: ${props.theme.iconButtonHoverTextColor[props.$colorTheme]};
+        background-color: ${getRGBA(
+          props.theme.iconButtonHoverTextColor[props.$colorTheme],
+          0.1
+        )};
+      }
+      ${Text} {
+        color: ${props.theme.iconButtonHoverTextColor[props.$colorTheme]};
+      }
+    }
+  `}
 `;

@@ -7,7 +7,6 @@ const theme = {
     iconColor: "rgb(0, 0, 0)",
     logoHoverColor: "rgba(0, 0, 0, 0)",
     linkButtonHoverColor: "rgba(0, 0, 0, 0)",
-    iconButtonHoverColor: "rgba(0, 0, 0, 0)",
     buttonTextColor: "rgb(255, 255, 255)",
     buttonBackgroundColor: "rgb(29, 155, 240)",
     buttonHoverBackgroundColor: "rgb(26, 140, 216)",
@@ -16,6 +15,8 @@ const theme = {
     searchBarIconColor: "rgb(113, 118, 123)",
     cardBackgroundColor: "rgb(22, 24, 28)",
     cardHoverBackgroundColor: "rgb(255, 255, 255, 0.03)",
+    iconButtonTextColor: "rgb(0, 0, 0)",
+    iconButtonHoverBackgroundColor: "rgba(0, 0, 0, 0)",
   },
   dark: {
     primaryColor: "rgb(29, 155, 240)",
@@ -25,7 +26,6 @@ const theme = {
     iconColor: "rgb(214, 217, 219)",
     logoHoverColor: "rgba(29, 155, 240, 0.1)",
     linkButtonHoverColor: "rgba(231, 233, 234, 0.1)",
-    iconButtonHoverColor: "rgba(239, 243, 244, 0.1)",
     buttonTextColor: "rgb(255, 255, 255)",
     buttonBackgroundColor: "rgb(29, 155, 240)",
     buttonHoverBackgroundColor: "rgb(26, 140, 216)",
@@ -37,6 +37,13 @@ const theme = {
     searchBarIconColor: "rgb(113, 118, 123)",
     cardBackgroundColor: "rgb(22, 24, 28)",
     cardHoverBackgroundColor: "rgb(255, 255, 255, 0.03)",
+    iconButtonTextColor: "rgb(113, 118, 123)",
+    iconButtonHoverBackgroundColor: "rgba(29, 155, 240, 0.1)",
+    iconButtonHoverTextColor: {
+      blue: "rgb(29, 155, 240)",
+      green: "rgb(0, 186, 124)",
+      red: "rgb(249, 24, 128)",
+    },
   },
 };
 

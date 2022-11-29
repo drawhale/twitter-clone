@@ -8,7 +8,7 @@ import AccountInfoButton from "./header/AccountInfoButton";
 import HomeIcon from "components/common/icons/HomeIcon";
 import SharpIcon from "components/common/icons/SharpIcon";
 import NotificationIcon from "components/common/icons/NotificationIcon";
-import MessageIcon from "components/common/icons/MessageIcon";
+import LetterIcon from "components/common/icons/LetterIcon";
 import BookmarkIcon from "components/common/icons/BookmarkIcon";
 import ListIcon from "components/common/icons/ListIcon";
 import ProfileIcon from "components/common/icons/ProfileIcon";
@@ -33,7 +33,7 @@ const Header: FC = () => {
                 icon={<NotificationIcon />}
                 text="일림"
               />
-              <IconLinkButton href="/#" icon={<MessageIcon />} text="쪽지" />
+              <IconLinkButton href="/#" icon={<LetterIcon />} text="쪽지" />
               <IconLinkButton href="/#" icon={<BookmarkIcon />} text="북마크" />
               <IconLinkButton href="/#" icon={<ListIcon />} text="리스트" />
               <IconLinkButton href="/#" icon={<ProfileIcon />} text="프로필" />
