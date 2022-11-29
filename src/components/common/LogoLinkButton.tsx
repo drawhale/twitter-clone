@@ -44,7 +44,7 @@ const Wrapper = styled.div`
   svg {
     width: 50px;
     height: 2rem;
-    color: ${(props) => props.theme.iconColor};
+    color: ${(props) => props.theme.logoColor};
     fill: currentColor;
   }
 `;

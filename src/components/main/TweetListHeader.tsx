@@ -33,8 +33,11 @@ const BackdropWrapper = styled.div`
   ${flexColumnBox};
   z-index: 2;
   height: 53px;
-  background-color: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(12px);
+
+  ${(props) => `
+    background-color: ${props.theme.listBackgroundColor}
+  `};
 `;
 
 const RowWrapper = styled.div`
@@ -58,8 +61,8 @@ const Title = styled.h2`
   ${textEllipsis};
 
   ${(props) => `
-  color: ${props.theme.textColor}
-`};
+    color: ${props.theme.textColor}
+  `};
 `;
 
 const IconButtonWrapper = styled.div`
