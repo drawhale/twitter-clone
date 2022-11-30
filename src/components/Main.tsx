@@ -29,15 +29,17 @@ const Main: FC = () => {
         </LeftWrapper>
         {shouldRenderSidebar && (
           <RightWrapper>
-            <SearchBar />
-            <EmptyWrapper />
-            <TrendCardWrapper>
-              <TrendCard />
-            </TrendCardWrapper>
-            <FollowCardWrapper>
-              <RecommendedFollowCard />
-            </FollowCardWrapper>
-            <FooterNav />
+            <SideBarWrapper>
+              <SearchBar />
+              <EmptyWrapper />
+              <TrendCardWrapper>
+                <TrendCard />
+              </TrendCardWrapper>
+              <FollowCardWrapper>
+                <RecommendedFollowCard />
+              </FollowCardWrapper>
+              <FooterNav />
+            </SideBarWrapper>
           </RightWrapper>
         )}
       </SplitWrapper>
@@ -92,10 +94,17 @@ const RightWrapper = styled.div`
   width: 350px;
   margin-right: 10px;
   padding: 12px 0 64px;
+  position: sticky;
 
   @media screen and (max-width: ${breakpoint.desktopMedium}px) {
     width: 290px;
   }
+`;
+
+const SideBarWrapper = styled.div`
+  ${flexColumnBox};
+  position: sticky;
+  top: -576px;
 `;
 
 const EmptyWrapper = styled.div`
