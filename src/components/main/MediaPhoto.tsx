@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { flexColumnBox, flexRowBox } from "styles";
 
@@ -26,11 +26,13 @@ const getImageSize = (url: string): Promise<ImageSize> => {
 const COLUMN_COUNT = 2;
 
 const MediaPhoto: FC<Props> = ({ media }) => {
-  const [wrapperRatio, setWrapperRatio] = useState(100);
+  const wrapperRef = useRef<HTMLDivElement>(null);
   const photos = media.filter((m) => m.type === "photo");
 
   useEffect(() => {
     const resizeImageRatio = async () => {
+      if (!wrapperRef.current) return;
+
       let width = 0,
         height = 0;
 
@@ -40,7 +42,9 @@ const MediaPhoto: FC<Props> = ({ media }) => {
         if (index % COLUMN_COUNT === 0) height += imageSize.height;
       }
 
-      setWrapperRatio((height / width) * 100);
+      wrapperRef.current.style.cssText = `padding-bottom: ${
+        (height / width) * 100
+      }%;`;
     };
     resizeImageRatio();
   }, [media]);
@@ -48,7 +52,7 @@ const MediaPhoto: FC<Props> = ({ media }) => {
   const chunkPhotos = chunk(photos, COLUMN_COUNT);
 
   return (
-    <RatioWrapper $ratio={wrapperRatio}>
+    <RatioWrapper ref={wrapperRef}>
       <LayoutWrapper>
         <Wrapper>
           {chunkPhotos.map((photos, rowIndex) => (
@@ -68,10 +72,10 @@ const MediaPhoto: FC<Props> = ({ media }) => {
 
 export default MediaPhoto;
 
-const RatioWrapper = styled.div<{ $ratio: number }>`
+const RatioWrapper = styled.div`
   ${flexColumnBox};
   width: 100%;
-  padding-bottom: ${(props) => props.$ratio}%;
+  padding-bottom: 100%;
 `;
 
 const LayoutWrapper = styled.div`
