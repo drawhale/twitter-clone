@@ -82,7 +82,7 @@ const Name = styled.div`
     height: 1.25em;
 
     ${(props) => `
-      color: ${props.theme.iconColor};
+      color: ${props.theme.logoColor};
       fill: currentColor;
     `}
   }
